@@ -36,10 +36,26 @@ function selectColor(){
     alert("colori")
 }
 
+// Essendo .choice una classe, devi usare querySelectorAll() perchè recupera una lista di elementi,
+//Successivamente ciclarli e scrivere la logica,
+/*
+let buttons = document.querySelectorAll('.choice');
+buttons.forEach(btn => {
+    console.log(btn)
+    btn.addEventListener('click', (event) => {
+        console.log(event)
+        event.preventDefault();
+        const color = event.target as HTMLButtonElement;    
+        const buttonText = color.innerText;
+    alert(buttonText); 
+    })
+})*/
 document.querySelector('.choice')?.addEventListener('click', (event) => {
+    // è una funzione, bisogna scrivere preventDefault()
     event.preventDefault;
     const color = event.target as HTMLButtonElement;
     
     const buttonText = color.innerText;
+    //Perchè non passi la variabile buttonText al posto di color.innerText???
     alert(color.innerText); 
 });
