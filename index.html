@@ -3,11 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CaRegUs</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.ts"></script>
 </head>
 <body>
-    
+    <header>
+        <div class="banner"><img src="" alt="Site logo"></div>
+    </header>
+    <main class="higherContainer">
+        <div class="formZone">
+            <h1>Step 1: Car data</h1>
+            <h2>Compile the registration form:</h2>
+            <form class="form">
+
+                <label for="Brand">Brand:</label>
+                <input type="text" id="brand" name="brand" /*required*/> 
+
+                <label for="Model">Model</label>
+                <input type="text" id="model" name="model" /*required*/>
+
+                <label for="Year">Year of production</label>
+                <input type="text" id="year" name="year" /*required*/>
+
+                <label for="Color">Color</label>
+                <div class="carColor">
+                    <label for="opzioni"></label>
+                    <div class="dropdown">
+                        <input type="text" class="dropbtn" placeholder="select color"></button>
+                        <div class="dropdown-content">
+                            <button class="choice" onclick="selectColor()">Red</button>
+                            <button class="choice">Blue</button>
+                            <button class="choice">Black</button>
+                        </div>
+                    </div>
+                    <img class="carLogo" src="assets/car.svg" alt="car logo">
+                </div>
+
+                <label for="Plate">Plate</label>
+                <input type="text" id="plate" name="plate" /*required*/>
+
+                <button class="next" onclick="">Next step</button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="adBanner"></div>
+        <div class="contacts"></div>
+    </footer>
 </body>
 </html>
