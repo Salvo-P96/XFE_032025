@@ -31,6 +31,7 @@ function selectColor(colorName: string) {
     let funcRes = colorHexa(colorName);
     return funcRes;
 }
+
 let buttons = document.querySelectorAll('.choice');
 buttons.forEach(btn => {
     console.log(btn)
@@ -43,3 +44,9 @@ buttons.forEach(btn => {
     })
 });
 
+
+// ancora in costruzione
+function setColor(color:string){
+    let colorHex = color;
+    let carCol = document.querySelector('carLogo')?.setAttribute("fill", colorHex);
+}
