@@ -1,4 +1,4 @@
-function coloreInEsadecimale(nomeColore: string): string {
+function colorHexa(nomeColore: string): string {
     const colori: { [key: string]: string } = {
         "black": "#000000",
         "white": "#FFFFFF",
@@ -20,42 +20,26 @@ function coloreInEsadecimale(nomeColore: string): string {
         "teal": "#008080",
         "navy": "#000080"
     };
-
     const colore = nomeColore.toLowerCase();
-
-    if (colori[colore]) {
+    if (nomeColore in colori) {
         return colori[colore];
     } else {
-        return "Colore non trovato!";
+        return "undefined color"
     }
 }
-
-function selectColor(){
-    let color1 = document.querySelector(".choice")?.innerHTML;
-    // document.querySelector(".dropbtn")
-    alert("colori")
+function selectColor(colorName: string) {
+    let funcRes = colorHexa(colorName);
+    return funcRes;
 }
-
-// Essendo .choice una classe, devi usare querySelectorAll() perchè recupera una lista di elementi,
-//Successivamente ciclarli e scrivere la logica,
-/*
 let buttons = document.querySelectorAll('.choice');
 buttons.forEach(btn => {
     console.log(btn)
     btn.addEventListener('click', (event) => {
         console.log(event)
         event.preventDefault();
-        const color = event.target as HTMLButtonElement;    
+        const color = event.target as HTMLButtonElement;
         const buttonText = color.innerText;
-    alert(buttonText); 
+        alert(buttonText);
     })
-})*/
-document.querySelector('.choice')?.addEventListener('click', (event) => {
-    // è una funzione, bisogna scrivere preventDefault()
-    event.preventDefault;
-    const color = event.target as HTMLButtonElement;
-    
-    const buttonText = color.innerText;
-    //Perchè non passi la variabile buttonText al posto di color.innerText???
-    alert(color.innerText); 
 });
+

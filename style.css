@@ -5,11 +5,23 @@
     align-content: center;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    width: 25%;
+    border: 1px solid #000000;
+    border-radius: 5%;
+}
+
 .form{
     display: flex;
     flex-direction: column;
     /* align-items: center; */
-    width: 15%;
+    width: 60%;
+    margin-bottom: 1rem;
+
 }
 
 .carColor{
@@ -74,12 +86,31 @@
 /*--------------------------------------------------------------------------*/
 
   @media (max-width: 768px) {
+    header{
+        display: none;
+    }
+
     body {
         background-color: rgb(221, 232, 236);
     }
-
+    h1{
+        margin: 10px 0;
+    }
+    h2{
+        font-size: small;
+        margin-top: 0;
+    }
     .container {
-        width: 90%;
-        padding: 10px;
+        width: 100%;
+        border: none;
+    }
+
+    .form{
+        width: 60%;
+        margin-bottom: 0;
+    }
+
+    .carColor .img{
+        color: #ff0000;
     }
 }
