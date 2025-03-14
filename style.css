@@ -1,37 +1,51 @@
-.formZone{
+.formZone {
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     width: 25%;
+    background-color: #FAF9F6;
     border: 1px solid #000000;
     border-radius: 5%;
+    box-shadow: 0px 0px 10px #00000066;
+    position: relative;
 }
 
-.form{
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    box-shadow:inset 0px 0px 10px #dfdfdf;
+    pointer-events:none;
+}
+
+.form {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     width: 60%;
     margin-bottom: 1rem;
 
 }
 
-.carColor{
+.carColor {
     display: flex;
     align-items: center;
     height: 3rem;
     width: 100%;
 }
 
-.carColor input{
+.carColor input {
     width: 70%;
 }
 
@@ -39,15 +53,52 @@
     height: 3rem;
     width: 30%;
     margin-left: 1rem;
+}
+
+.carLogo:hover{
+    animation: engine-start 0.1s;
+}
+
+@keyframes engine-start {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(1px, 0px) rotate(2deg); }
+    50% { transform: translate(0, 0) rotate(0eg); }
+    75% { transform: translate(-1px, 0px) rotate(-2deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
   }
 
-  .form input:not(.carColor input){
+.form input:not(.carColor input) {
     height: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-  }
+}
+
+.dropdown-content span{
+    position: relative;
+}
+
+.dropdown-content span div{
+    position: absolute;
+    top: 0.18rem;
+    left: 3rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/*offset strano, non regolare*/
+.red{
+    background-color: #ff0000;
+}
+.blue{
+    background-color: #0719bb;
+}
+.black{
+    background-color: #000000;
+}
+
 /*--------------------------------------------------------------------------*/
-  .dropdown {
+.dropdown {
     position: relative;
     display: inline-block;
 }
@@ -83,34 +134,38 @@
     display: flex;
     flex-direction: column;
 }
+
 /*--------------------------------------------------------------------------*/
 
-  @media (max-width: 768px) {
-    header{
+@media (max-width: 768px) {
+    header {
         display: none;
     }
 
     body {
         background-color: rgb(221, 232, 236);
     }
-    h1{
+
+    h1 {
         margin: 10px 0;
     }
-    h2{
+
+    h2 {
         font-size: small;
         margin-top: 0;
     }
+
     .container {
         width: 100%;
         border: none;
     }
 
-    .form{
+    .form {
         width: 60%;
         margin-bottom: 0;
     }
 
-    .carColor .img{
+    .carColor .img {
         color: #ff0000;
     }
 }
