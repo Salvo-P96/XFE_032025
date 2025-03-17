@@ -36,14 +36,10 @@ let buttons = document.querySelectorAll('.choice');
 buttons.forEach(btn => {
     btn.addEventListener('click', (event) => {
         event.preventDefault();
-        // const color = event.target;
-        // const buttonText = color.innerText;
-        // alert(buttonText);
     })
 });
 
 
-// ancora in costruzione
 function setColor(color) {
     let parent = document.querySelector('.carLogo').contentDocument;
     let carCol = parent.querySelector("svg");
