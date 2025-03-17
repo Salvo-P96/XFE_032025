@@ -5,14 +5,80 @@
 }
 
 body{
-    background-color: #a9a9a9;
+    background-color: #a9a9a9;  
 }
+
 .banner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
     width: 100%;
     height: 4rem;
     background-color: #000000;
     color: #FFD700;
 }
+
+.banner button{
+    background-color: #000000;
+    color: #FFD700;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 1rem;
+    border-radius: 10%;
+}
+
+.banner button:hover{
+    background-color: #2c2c2c;
+}
+
+.navMenu{
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 100;
+    background-color: #ffffff;
+  }
+
+  .line {
+    width: 100%;
+    height: 5px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+  }
+  
+
+  .line1 {
+    transform-origin: top left;
+  }
+  
+  .line2 {
+    opacity: 1;
+  }
+  
+  .line3 {
+    transform-origin: bottom left;
+  }
+  
+  .navMenu:hover .line1 {
+    transform: rotate(45deg) translateY(10px);
+  }
+  
+  .navMenu:hover .line2 {
+    opacity: 0;
+  }
+  
+  .navMenu:hover .line3 {
+    transform: rotate(-45deg) translateY(-10px);/
+  }
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑navbar↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+/*--------------------------------------------------------------------*/
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓body↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
 
 .formZone {
     display: flex;
@@ -48,12 +114,34 @@ body{
     pointer-events:none;
 }
 
+h1{
+    margin: 1rem;
+}
+
+h2{
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
 .form {
     display: flex;
     flex-direction: column;
     width: 60%;
     margin-bottom: 1rem;
+}
 
+.form input{
+    border-radius: 3px;
+    box-shadow: 0 0 5px #0000003f;
+}
+
+.form input:hover{
+    background-color:#EAE9E6;
+}
+
+.form input:focus{
+    outline: solid 1px #000000;
+    box-shadow:0 0 5px #0000003f inset;
 }
 
 .carColor {
@@ -77,10 +165,30 @@ body{
     animation: engine-start 0.1s;
 }
 
+.nxtBtn{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.next{
+    width: 50%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #FFD700;
+}
+
+/*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑body↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+/*--------------------------------------------------------------------*/
+/*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓footer↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
 .footer{
     height: 3rem;
     width: 100%;
-    background-color: #a9a9a9;
+    background-color: #000000;
     border-top: 1px solid #FFD700;
     border-radius: 8px 8px 0 0;
 }
@@ -181,7 +289,20 @@ body{
     .container {
         width: 100%;
         border: none;
+        margin: 0;
+        border-radius: 0;
+
     }
+
+    .container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-shadow:inset 0px 0px 10px #dfdfdf;
+        border-radius: 0;
+        pointer-events:none;
+    }   
 
     .form {
         width: 60%;
@@ -190,5 +311,9 @@ body{
 
     .carColor .img {
         color: #ff0000;
+    }
+
+    footer{
+        display: none;
     }
 }

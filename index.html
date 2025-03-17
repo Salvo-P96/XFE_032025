@@ -10,7 +10,14 @@
 
 <body>
     <header>
-        <div class="banner"><img src="" alt="Site logo"></div>
+        <div class="banner">
+            <button class="homeBtn"><img src="" alt="Site logo"></button>
+            <div class="NavMenu">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
+        </div>
     </header>
     <main class="higherContainer">
         <div class="formZone">
@@ -20,9 +27,6 @@
                 <form class="form">
 
                     <label for="Brand">Brand:</label>
-                    <!-- Perchè hai messo /*required*/?? non c'è bisogno dei /* -->
-                    <!--Perchè erano required ma quando selezionavo i colori mi bloccava con "compila questo campo"-->
-                    <!--quindi l'ho messo per commentare(?) e bypassare-->
                     <input type="text" id="brand" name="brand" /*required*/ />
 
                     <label for="Model">Model</label>
@@ -54,8 +58,8 @@
 
                     <label for="Plate">Plate</label>
                     <input type="text" id="plate" name="plate" /*required* />
+                    <div class="nxtBtn"><button class="next" onclick="">Next step</button></div>
 
-                    <button class="next" onclick="">Next step</button>
             </div>
             </form>
         </div>
