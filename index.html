@@ -41,18 +41,19 @@
                         <div class="dropdown">
                             <input type="text" class="dropbtn" placeholder="select color">
                             <div class="dropdown-content">
-                                <button class="choice" onclick="selectColor()">
+                                <button class="choice" onclick="selectColor('Red')">
                                     <span>Red <div class="red"> </div></span>
                                 </button>
-                                <button class="choice" onclick="selectColor()">
+                                <button class="choice" onclick="selectColor('Blue')">
                                     <span>Blue <div class="blue"> </div></span>
                                 </button>
-                                <button class="choice" onclick="selectColor()">
+                                <button class="choice" onclick="selectColor('Black')">
                                     <span>Black <div class="black"> </div></span>
                                 </button>
                             </div>
                         </div>
-                        <img class="carLogo" src="assets/customCar.svg" alt="car logo">
+                        <object data="assets/customCar.svg" type="image/svg+xml"  class="carLogo"> </object>
+
                     </div>
 
                     <label for="Plate">Plate</label>
@@ -67,7 +68,7 @@
         <div class="adBanner"></div>
         <div class="contacts"></div>
     </footer>
-    <script src="script.ts"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
