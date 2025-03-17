@@ -1,5 +1,5 @@
-function colorHexa(nomeColore: string): string {
-    const colori: { [key: string]: string } = {
+function colorHexa(nomeColore) {
+    const colori = {
         "black": "#000000",
         "white": "#FFFFFF",
         "red": "#FF0000",
@@ -21,32 +21,32 @@ function colorHexa(nomeColore: string): string {
         "navy": "#000080"
     };
     const colore = nomeColore.toLowerCase();
-    if (nomeColore in colori) {
+    if (colore in colori) {
         return colori[colore];
     } else {
         return "undefined color"
     }
 }
-function selectColor(colorName: string) {
+function selectColor(colorName) {
     let funcRes = colorHexa(colorName);
-    return funcRes;
+    setColor(funcRes);
 }
 
 let buttons = document.querySelectorAll('.choice');
 buttons.forEach(btn => {
-    console.log(btn)
     btn.addEventListener('click', (event) => {
-        console.log(event)
         event.preventDefault();
-        const color = event.target as HTMLButtonElement;
-        const buttonText = color.innerText;
-        alert(buttonText);
+        // const color = event.target;
+        // const buttonText = color.innerText;
+        // alert(buttonText);
     })
 });
 
 
 // ancora in costruzione
-function setColor(color:string){
-    let colorHex = color;
-    let carCol = document.querySelector('carLogo')?.setAttribute("fill", colorHex);
+function setColor(color) {
+    let parent = document.querySelector('.carLogo').contentDocument;
+    let carCol = parent.querySelector("svg");
+    carCol.setAttribute("fill", color);
 }
+
